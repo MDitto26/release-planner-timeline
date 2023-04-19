@@ -411,10 +411,12 @@ tr:hover {
     <button onclick="location.reload()">Start New Release Plan</button>
   </div>
  <script>
+  document.addEventListener("DOMContentLoaded", function() {
   const releaseForm = document.getElementById('release-form');
   const releaseTasks = document.getElementById('release-tasks');
   const plannerContainer = document.getElementById('planner-container');
   const releaseNamePlaceholder = document.getElementById('release-name-placeholder');
+  
 
 function addReleaseTask(task, date, link) {
   const eventContainer = document.createElement("div");
@@ -522,7 +524,7 @@ function downloadPDF() {
 const downloadPDFButton = document.getElementById('download-pdf');
 downloadPDFButton.addEventListener('click', downloadPDF);
 
-
+});
 
 </script>
 
