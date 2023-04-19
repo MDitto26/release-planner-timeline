@@ -407,7 +407,8 @@ tr:hover {
       </tbody>
     </table>
     <br>
-    <button id="download-pdf" onclick="downloadPDF()">Download Release Plan</button>
+    <button id="download-pdf">Download Release Plan</button>
+
     <button onclick="location.reload()">Start New Release Plan</button>
   </div>
  <script>
@@ -522,7 +523,7 @@ function downloadPDF() {
 }
 
 const downloadPDFButton = document.getElementById('download-pdf');
-downloadPDFButton.addEventListener('click', downloadPDF);
+  downloadPDFButton.addEventListener('click', downloadPDF);
 
 });
 
