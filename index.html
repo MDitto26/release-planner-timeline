@@ -27,6 +27,12 @@
     font-weight: normal;
   }
 
+  p {
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+
 
     img {
       margin-top: 50px;
@@ -189,8 +195,8 @@ tr:hover {
 
 .timeline-line {
   position: absolute;
-  top: 10.2%;
-  bottom: 25.05%;
+  top: 16%;
+  bottom: 10%;
   left: 50%;
   width: 4px;
   margin-left: -2px;
@@ -249,8 +255,8 @@ tr:hover {
 .timeline-event-date {
   color: #000;
   font-weight: bold;
-  font-style: normal;
   margin-top: 5px;
+  text-transform: uppercase;
 }
 
   
@@ -294,6 +300,7 @@ tr:hover {
   </div>
   <div id="planner-container" style="display: none;">
     <h2><span id="release-name-placeholder"></span> Release Plan</h2>
+    <p>Here's your tailored release plan! Follow the <strong>dates and strategies on the timeline below</strong> to supercharge your music marketing campaign. <br><br>Want more info on how to get your music heard? Sign up below and receive a FREE copy of The Independent Artist's Handbook, our <strong>complete music marketing guide</strong> covering everything from pitching playlists to booking shows.</p><br><br>
     <div class="timeline-line"></div>
     <div class="timeline-container" id="release-tasks">
 </div>
@@ -301,7 +308,7 @@ tr:hover {
       <tbody id="release-tasks">
       </tbody>
     </table>
-    <br><p>Get a FREE copy of The Indepedent Artist's Handbook, our complete music marketing<br>guide covering everything from pitching playlists to booking shows.</p><br>
+    <br>
     <button onclick="location.reload()">Start new release plan</button>
   </div>
  <script>
