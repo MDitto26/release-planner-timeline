@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Release Planner</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
   <style>
   body {
     font-family: Poppins, sans-serif;
@@ -31,8 +36,6 @@
     padding-right: 20%;
     padding-left: 20%;
 }
-
-
 
     img {
       margin-top: 50px;
@@ -404,7 +407,8 @@ tr:hover {
       </tbody>
     </table>
     <br>
-    <button onclick="location.reload()">Start new release plan</button>
+    <button id="download-pdf" onclick="downloadPDF()">Download Release Plan</button>
+    <button onclick="location.reload()">Start New Release Plan</button>
   </div>
  <script>
   const releaseForm = document.getElementById('release-form');
@@ -498,10 +502,28 @@ function openInNewTab(url) {
   window.open(url, '_blank');
 }
 
-
-
-
 releaseForm.addEventListener('submit', planRelease);
+
+
+function downloadPDF() {
+  const plannerContainer = document.getElementById('planner-container');
+
+  html2canvas(plannerContainer).then((canvas) => {
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+    pdf.save('release-plan.pdf');
+  });
+}
+
+const downloadPDFButton = document.getElementById('download-pdf');
+downloadPDFButton.addEventListener('click', downloadPDF);
+
+
+
 </script>
 
 </body>
