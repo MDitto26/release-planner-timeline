@@ -290,18 +290,28 @@ tr:hover {
   }
   p {
     padding-right: 10%;
-    padding-left: 10%;
+    padding-left: 15%;
   }
   .timeline-event {
     width: 90%;
   }
   .timeline-event:nth-child(odd), .timeline-event:nth-child(even) {
     margin-left: 5%;
-    margin-right: 5%;
+    margin-right: 10%;
   }
   .timeline-event-line {
     display: none;
   }
+  .timeline-line {
+  position: absolute;
+  top: 21%;
+  bottom: 10%;
+  left: 50%;
+  width: 4px;
+  margin-left: -2px;
+  background-color: #fff;
+  z-index: 0;
+}
 }
 
 /* Tablet devices */
@@ -336,6 +346,9 @@ tr:hover {
   }
   .timeline-event {
     width: 45%;
+  }
+  .timeline-event-line {
+    display: none;
   }
 }
 
